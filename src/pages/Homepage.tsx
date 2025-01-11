@@ -22,6 +22,7 @@ interface HomepageHeadingProps {
 }
 
 const REPO_LINK = 'https://github.com/MaxwellBo/Muncoordinated-2';
+const logo = '../../logo.png'
 
 /* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
@@ -31,23 +32,40 @@ const HomepageHeading = ({ mobile }: HomepageHeadingProps) => (
   <Container text>
     <Header
       as="h1"
-      content="Muncoordinated"
+      content="QMUN"
       inverted
       style={{
         fontSize: mobile ? '2em' : '4em',
-        fontWeight: 'normal',
+        fontWeight: 'bold',
         marginBottom: 0,
         marginTop: mobile ? '1.5em' : '3em',
       }}
     />
+    <br />
+    <Grid textAlign="center" vertical>
+      <Grid.Column width={5} style={{ marginTop: '-3em' }}>
+        <Image
+          size="massive"
+          rounded
+          src="src/components/images/logo_unyc.png"
+        />
+      </Grid.Column>
+      <Grid.Column width={3}>
+        <Image
+          size="massive"
+          rounded
+          src="src/components/images/logo_qmun.png"
+        />
+      </Grid.Column>
+    </Grid>
     <Header
       as="h2"
-      content="The collaborative browser-based Model UN committee management app"
+      content="Quebec Model United Nations Conference 2025"
       inverted
       style={{
-        fontSize: mobile ? '1.5em' : '1.7em',
+        fontSize: mobile ? '0.5em' : '1.7em',
         fontWeight: 'normal',
-        marginTop: mobile ? '0.5em' : '1.5em',
+        marginTop: mobile ? '0.5em' : '0.5em',
       }}
     />
     <br />
