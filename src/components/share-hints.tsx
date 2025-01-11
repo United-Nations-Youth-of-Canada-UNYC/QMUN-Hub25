@@ -66,7 +66,6 @@ export function ShareCapabilities() {
         <List.Item>Add themselves to speakers' lists</List.Item>
         <List.Item>Add and edit amendments on resolutions</List.Item>
         <List.Item>Propose motions</List.Item>
-        <List.Item>Vote on motions</List.Item>
         <List.Item>Vote on strawpolls</List.Item>
       </List>
   )
@@ -79,7 +78,6 @@ export function VerboseShareCapabilities() {
         <List.Item>Add themselves to speakers' lists that have the <i>Delegates can queue</i> flag enabled</List.Item>
         <List.Item>Add and edit amendments on resolutions that have the <i>Delegates can amend</i> flag enabled</List.Item>
         <List.Item>Propose motions that have the <i>Delegates can propose motions</i> flag enabled</List.Item>
-        <List.Item>Vote on motions that have the <i>Delegates can vote on motions</i> flag enabled</List.Item>
         <List.Item>Vote on strawpolls</List.Item>
       </List>
   )
