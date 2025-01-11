@@ -44,9 +44,7 @@ export const CAUCUS_STATUS_OPTIONS = [
 ].map(makeDropdownOption);
 
 export enum Stance {
-  For = 'For',
-  Neutral = 'Neutral',
-  Against = 'Against'
+  Add  = 'Add to queue'
 }
 
 export interface SpeakerEvent {
