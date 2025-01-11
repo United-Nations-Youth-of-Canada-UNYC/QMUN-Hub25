@@ -493,7 +493,6 @@ function Queuer(props: {
             disabled={disableButtons}
             onClick={setStance(Stance.Add)}
           />
-          <Button.Or/>
         </Button.Group>
       </Form>
     </Segment>
@@ -613,7 +612,7 @@ export default class Caucus extends React.Component<Props, State> {
 
     const renderedSpeakerTimer = (
       <Timer
-        name="Speaker timer"
+        name="Speaker Timer"
         timerFref={caucusFref.child('speakerTimer')}
         key={caucusID + 'speakerTimer'}
         onChange={this.setSpeakerTimer}
@@ -625,7 +624,7 @@ export default class Caucus extends React.Component<Props, State> {
 
     const renderedCaucusTimer = (
       <Timer
-        name="Suspension timer"
+        name="Suspension Timer"
         timerFref={caucusFref.child('caucusTimer')}
         key={caucusID + 'caucusTimer'}
         onChange={this.setCaucusTimer}
@@ -696,7 +695,7 @@ export default class Caucus extends React.Component<Props, State> {
     return (
       <Container style={{ 'padding-bottom': '2em' }}>
         <Helmet>
-            <title>{`${caucus?.name} - Muncoordinated`}</title>
+            <title>{`QMUN 2025`}</title>
         </Helmet>
         <Grid columns="equal" stackable>
           {header}
