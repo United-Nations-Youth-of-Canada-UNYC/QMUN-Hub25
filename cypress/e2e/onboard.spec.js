@@ -1,7 +1,8 @@
 import { purge, enterUsername, enterCurrentPassword, enterNewPassword } from './utils'
 
-const TEMPLATE = 'UN Security Council'
+const CHAIRPERSON = 'Test chairperson'
 const TOPIC = 'Test topic'
+const COMMITTEE = 'Test committee'
 const CONFERENCE = 'Test conference'
 
 describe('Run through creating a new committee', function () {
@@ -47,6 +48,10 @@ describe('Run through creating a new committee', function () {
       .type(TOPIC)
       .should('have.value', TOPIC)
 
+    cy.get('input[placeholder="Name(s) of chairperson or chairpeople"')
+      .type(CHAIRPERSON)
+      .should('have.value', CHAIRPERSON)
+
     cy.get('input[placeholder="Conference name"')
       .type(CONFERENCE)
       .should('have.value', CONFERENCE)
@@ -63,6 +68,10 @@ describe('Run through creating a new committee', function () {
 
     cy.get('input[placeholder="Committee topic"')
       .should('have.value', TOPIC)
+
+    cy.get('input[placeholder="Name(s) of chairperson or chairpeople"')
+      .should('have.value', CHAIRPERSON)
+
   })
 
   it('observes the templated prepopulated member list for the Security Council', function () {
