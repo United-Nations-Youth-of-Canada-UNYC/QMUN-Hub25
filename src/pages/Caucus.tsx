@@ -93,11 +93,9 @@ export function NextSpeaking(props: {
 
     const vs: SpeakerEvent[] = _.values(q);
 
-    const fors = vs.filter((se) => se.stance === Stance.For);
-    const againsts = vs.filter((se) => se.stance === Stance.Against);
-    const neutrals = vs.filter((se) => se.stance === Stance.Neutral);
+    const adds = vs.filter((se) => se.stance === Stance.Add);
 
-    const interlaced = _.flatten(_.zip(fors, againsts, neutrals));
+    const interlaced = _.flatten(_.zip(adds));
 
     props.fref.child('queue').set({});
 
@@ -219,19 +217,6 @@ export function NextSpeaking(props: {
     </Button>
   );
 
-  const interlaceButton = (
-    <Button
-      icon
-      disabled={!interlaceable}
-      basic
-      color="purple"
-      onClick={interlace}
-    >
-      <Icon name="random"/>
-      Order
-    </Button>
-  );
-
   let button = nextButton;
 
   if (!hasNowSpeaking) {
@@ -254,11 +239,6 @@ export function NextSpeaking(props: {
     <Segment textAlign="center" loading={!caucus}>
       <Label attached="top left" size="large">Next speaking</Label>
       {button}
-      <Popup
-        trigger={interlaceButton}
-        content="Orders the list so that speakers are
-        'For', then 'Against', then 'Neutral', then 'For', etc."
-      />
       <SpeakerFeed
         data={caucus ? caucus.queue : undefined}
         queueFref={props.fref.child('queue')}
@@ -271,11 +251,7 @@ export function NextSpeaking(props: {
 
 function StanceIcon(props: { stance: Stance }) {
   switch (props.stance) {
-    case Stance.For:
-      return <Icon name="thumbs up outline"/>;
-    case Stance.Against:
-      return <Icon name="thumbs down outline"/>;
-    default:
+    case Stance.Add:
       return <Icon name="hand point right outline"/>;
   }
 }
@@ -517,22 +493,11 @@ function Queuer(props: {
         />
         <Button.Group size="large" fluid>
           <Button
-            content="For"
+            content="Add to queue"
             disabled={disableButtons}
-            onClick={setStance(Stance.For)}
+            onClick={setStance(Stance.Add)}
           />
           <Button.Or/>
-          <Button
-            disabled={disableButtons}
-            content="Neutral"
-            onClick={setStance(Stance.Neutral)}
-          />
-          <Button.Or/>
-          <Button
-            disabled={disableButtons}
-            content="Against"
-            onClick={setStance(Stance.Against)}
-          />
         </Button.Group>
       </Form>
     </Segment>
