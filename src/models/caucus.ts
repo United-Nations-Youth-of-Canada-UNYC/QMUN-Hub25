@@ -44,7 +44,7 @@ export const CAUCUS_STATUS_OPTIONS = [
 ].map(makeDropdownOption);
 
 export enum Stance {
-  Add  = 'Add to queue'
+  Add  = ''
 }
 
 export interface SpeakerEvent {
@@ -110,7 +110,6 @@ export interface Lifecycle {
   speaking: firebase.database.Reference;
   timerData: TimerData;
   timer: firebase.database.Reference;
-  yielding: boolean;
   queueHeadData?: SpeakerEvent;
   queueHead?: firebase.database.Reference;
   timerResetSeconds: number;
@@ -118,18 +117,12 @@ export interface Lifecycle {
 
 export const runLifecycle = (lifecycle: Lifecycle) => {
   const { history, speakingData, speaking, timerData, timer, 
-    timerResetSeconds, yielding, queueHeadData, queueHead } = lifecycle;
-
-  let additionalYieldTime = 0;
+    timerResetSeconds, queueHeadData, queueHead } = lifecycle;
 
   // Move the person currently speaking into history...
   if (speakingData) {
     history.push().set({ ...speakingData, duration: timerData.elapsed });
     speaking.set(null);
-
-    if (yielding) {
-      additionalYieldTime = timerData.remaining;
-    }
 
     timer.update({
       elapsed: 0,
@@ -141,12 +134,12 @@ export const runLifecycle = (lifecycle: Lifecycle) => {
   if (queueHead && queueHeadData) {
     speaking.set({
       ...queueHeadData,
-      duration: queueHeadData.duration + additionalYieldTime
+      duration: queueHeadData.duration
     });
 
     timer.update({
       elapsed: 0,
-      remaining: queueHeadData.duration + additionalYieldTime, // load the appropriate time 
+      remaining: queueHeadData.duration, // load the appropriate time 
       ticking: false // and stop it
     });
 
