@@ -94,7 +94,6 @@ export interface CommitteeData {
   chair: string;
   topic: string;
   conference?: string; // TODO: Migrate
-  template?: Template;
   creatorUid: firebase.UserInfo['uid'];
   members?: Record<MemberID, MemberData>;
   caucuses?: Record<CaucusID, CaucusData>;
@@ -108,7 +107,7 @@ export interface CommitteeData {
 }
 
 const GENERAL_SPEAKERS_LIST: CaucusData = {
-  ...DEFAULT_CAUCUS, name: 'General Speakers\' List'
+  ...DEFAULT_CAUCUS, name: 'General Speakers List'
 };
 export const DEFAULT_COMMITTEE: CommitteeData = {
   name: '',
