@@ -22,7 +22,7 @@ import Stats from './Stats';
 import Motions from './Motions';
 import Unmod from './Unmod';
 import Notes from './Notes';
-import Help from './Help';
+import Help, { KEYBOARD_SHORTCUT_LIST } from './Help';
 import {CaucusStatus, DEFAULT_CAUCUS, putCaucus} from '../models/caucus';
 import {URLParameters} from '../types';
 import Loading from '../components/Loading';
@@ -360,7 +360,7 @@ export default class Committee extends React.Component<Props, State> {
     return (
       <Container text style={{ padding: '1em 0em' }}>
         <Helmet>
-          <title>{`${committee?.name} - Muncoordinated`}</title>
+          <title>{`QMUN 2025`}</title>
         </Helmet>
         <Header as="h1">
           <Input
@@ -380,6 +380,16 @@ export default class Committee extends React.Component<Props, State> {
               fluid
               loading={!committee}
               placeholder="Committee topic"
+            />
+          </List.Item>
+          <List.Item>
+            <Input
+              label="Chairpersons"
+              value={committee ? committee.chair : ''}
+              onChange={fieldHandler<CommitteeData>(committeeFref, 'chair')}
+              fluid
+              loading={!committee}
+              placeholder="Name(s) of chairperson or chairpersons"
             />
           </List.Item>
           <List.Item>
