@@ -236,7 +236,7 @@ export function NextSpeaking(props: {
 
   return (
     <Segment textAlign="center" loading={!caucus}>
-      <Label attached="top left" size="large">Next speaking</Label>
+      <Label attached="top left" size="large">Next Speaking</Label>
       {button}
       <SpeakerFeed
         data={caucus ? caucus.queue : undefined}
@@ -570,7 +570,7 @@ export default class Caucus extends React.Component<Props, State> {
             onChange={textAreaHandler<CaucusData>(caucusFref, 'topic')}
             attatched="top"
             rows={1}
-            placeholder="Set caucus details"
+            placeholder="Suspension details"
           />
         </Form>
       </>
@@ -586,7 +586,7 @@ export default class Caucus extends React.Component<Props, State> {
 
     return (
       <Segment loading={!caucus}>
-        <Label attached="top left" size="large">Now speaking</Label>
+        <Label attached="top left" size="large">Now Speaking</Label>
         <Feed size="large">
           <SpeakerFeedEntry data={entryData} fref={caucusFref.child('speaking')} speakerTimer={speakerTimer}/>
         </Feed>
@@ -625,7 +625,7 @@ export default class Caucus extends React.Component<Props, State> {
 
     const renderedCaucusTimer = (
       <Timer
-        name="Caucus timer"
+        name="Suspension timer"
         timerFref={caucusFref.child('caucusTimer')}
         key={caucusID + 'caucusTimer'}
         onChange={this.setCaucusTimer}
