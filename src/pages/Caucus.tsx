@@ -136,7 +136,6 @@ export function NextSpeaking(props: {
       speaking: props.fref.child('speaking'),
       timerData: props.speakerTimer,
       timer: props.fref.child('speakerTimer'),
-      yielding: false,
       timerResetSeconds: speakerSeconds
     };
 
@@ -252,7 +251,8 @@ export function NextSpeaking(props: {
 function StanceIcon(props: { stance: Stance }) {
   switch (props.stance) {
     case Stance.Add:
-      return <Icon name="hand point right outline"/>;
+      // return <Icon name="hand point right outline"/>;
+      return null;  // Icon removed, returning null instead
   }
 }
 
@@ -285,7 +285,6 @@ class SpeakerFeedEntry extends React.PureComponent<{
       speakingData: speaking,
       timerData: speakerTimer,
       timer: caucusRef.child('speakerTimer'),
-      yielding: true,
       timerResetSeconds: 0 // this shouldn't ever be used when yielding
     };
 
@@ -312,9 +311,6 @@ class SpeakerFeedEntry extends React.PureComponent<{
           {data && <Label size="mini" as="a" onClick={() => fref.remove()}>
               Remove
           </Label>}
-          {data && speaking && (<Label size="mini" as="a" onClick={this.yieldHandler}>
-            Yield
-          </Label>)}
         </Feed.Meta>
       </Feed.Content>
     )
