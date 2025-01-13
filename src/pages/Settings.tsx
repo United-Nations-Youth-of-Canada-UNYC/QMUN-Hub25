@@ -74,7 +74,7 @@ export default class Settings extends React.Component<Props, State> {
           {renderSetting('moveQueueUp', '\'Queue\' should appear above \'Next speaking\'')}
           {renderSetting(
             'timersInSeparateColumns',
-            'Alternate arrangement with \'Speaker timer\' and \'Caucus timer\' in separate columns'
+            'Alternate arrangement with \'Speaker timer\' and \'Suspension timer\' in separate columns'
           )}
           {/* {renderSetting(
             'autoNextSpeaker',
