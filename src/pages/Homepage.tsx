@@ -29,20 +29,21 @@ const logo = '../../logo.png'
  * such things.
  */
 const HomepageHeading = ({ mobile }: HomepageHeadingProps) => (
-  <Container text>
-    <Header
+  <Container text style={{backgroundColor: '#f2f0ef'}}>
+    <Header 
       as="h1"
       content="QMUN"
       inverted
       style={{
         fontSize: mobile ? '2em' : '4em',
         fontWeight: 'bold',
+        color: 'black',
         marginBottom: 0,
         marginTop: mobile ? '1.5em' : '3em',
       }}
     />
     <br />
-    <Grid textAlign="center" vertical>
+    <Grid textAlign="center" vertical style={{backgroundColor: '#f2f0ef'}}>
       <Grid.Column width={5} style={{ marginTop: '-3em' }}>
         <Image
           size="massive"
@@ -58,22 +59,19 @@ const HomepageHeading = ({ mobile }: HomepageHeadingProps) => (
         />
       </Grid.Column>
     </Grid>
-    <Header
+    <Header 
       as="h2"
       content="Quebec Model United Nations Conference 2025"
       inverted
       style={{
         fontSize: mobile ? '0.5em' : '1.7em',
+        color: 'black',
         fontWeight: 'normal',
         marginTop: mobile ? '0.5em' : '0.5em',
+        backgroundColor: '#f2f0ef',
       }}
     />
-    <br />
-    <Button as="a" primary size="huge" href="/onboard" onClick={logClickCreateACommitteeButton}>
-      Create a committee
-      <Icon name="arrow right" />
-    </Button>
-    <br />
+    
   </Container>
 )
 
@@ -116,16 +114,20 @@ class DesktopContainer extends React.Component<DesktopContainerProps, DesktopCon
       <>
       {/* @ts-ignore */}
         <Visibility once={false} onBottomPassed={this.showFixedMenu} onBottomPassedReverse={this.hideFixedMenu}>
-          <Segment inverted textAlign="center" style={{ minHeight: 700, padding: '1em 0em' }} vertical>
+          <Segment inverted textAlign="center" style={{ minHeight: 700, padding: '0em 0em', backgroundColor: '#f2f0ef' }} vertical>
             <Menu
               fixed={fixed ? 'top' : undefined}
               inverted={!fixed}
               pointing={!fixed}
               secondary={!fixed}
               size="large"
+              style={{backgroundColor: 'rgb(39,96,82)'}}
             >
               <Container>
                 <Menu.Item as="a" active>Home</Menu.Item>
+                <Menu.Item as="a" href="/committees/-MEZXMLXacUeaJyXM4zR">QMUN Hub</Menu.Item>
+                <Menu.Item as="a" href="/guides">Background Guides</Menu.Item>
+
                 <Menu.Item position="right">
                   <Button as="a" href="/onboard" inverted={!fixed} onClick={logClickLogInButton}>
                     Log in
@@ -153,63 +155,66 @@ interface MobileContainerState {
   sidebarOpened: boolean;
 }
 
-// class MobileContainer extends React.Component<MobileContainerProps, MobileContainerState> {
-//   constructor(props: MobileContainerProps) {
-//     super(props);
+ class MobileContainer extends React.Component<MobileContainerProps, MobileContainerState> {
+   constructor(props: MobileContainerProps) {
+     super(props);
 
-//     this.state = {
-//       sidebarOpened: false
-//     };
-//   }
+     this.state = {
+       sidebarOpened: false
+     };
+   }
 
-//   handlePusherClick = () => {
-//     const { sidebarOpened } = this.state;
+  handlePusherClick = () => {
+    const { sidebarOpened } = this.state;
 
-//     if (sidebarOpened) {
-//       this.setState({ sidebarOpened: false });
-//     }
-//   }
+    if (sidebarOpened) {
+      this.setState({ sidebarOpened: false });
+    }
+  }
 
-//   handleToggle = () => {
-//     this.setState({ sidebarOpened: !this.state.sidebarOpened });
-//   }
+ handleToggle = () => {
+    this.setState({ sidebarOpened: !this.state.sidebarOpened });
+  }
 
-//   render() {
-//     const { children } = this.props;
-//     const { sidebarOpened } = this.state;
+  render() {
+    const { children } = this.props;
+    const { sidebarOpened } = this.state;
 
-//     return (
-//       <>
-//         <Sidebar.Pushable>
-//           <Sidebar as={Menu} animation="push" inverted vertical visible={sidebarOpened}>
-//             <Menu.Item as="a" active>Home</Menu.Item>
-//             <Menu.Item as="a" href="/onboard">Log in</Menu.Item>
-//             <Menu.Item as="a" href="/onboard">Sign up</Menu.Item>
-//           </Sidebar>
+    return (
+      <>
+        <Sidebar.Pushable>
+          <Sidebar as={Menu} animation="uncover" inverted vertical visible={sidebarOpened}>
+            <Menu.Item as="a" active>Home</Menu.Item>
+            <Menu.Item as="a" href="/committees/-MEZXMLXacUeaJyXM4zR">QMUN Hub</Menu.Item>
+            <Menu.Item as="a" href="/guides">Background Guides</Menu.Item>
+            
+            <Menu.Item as="a" href="/onboard">Log in</Menu.Item>
+            <Menu.Item as="a" href="/onboard">Sign up</Menu.Item>
+          </Sidebar>
 
-//           <Sidebar.Pusher dimmed={sidebarOpened} onClick={this.handlePusherClick} style={{ minHeight: '100vh' }}>
-//             <Segment inverted textAlign="center" style={{ minHeight: 350, padding: '1em 0em' }} vertical>
-//               <Container>
-//                 <Menu inverted pointing secondary size="large">
-//                   <Menu.Item onClick={this.handleToggle}>
-//                     <Icon name="sidebar" />
-//                   </Menu.Item>
-//                   <Menu.Item position="right">
-//                     <Button as="a" inverted href="/onboard" >Log in</Button>
-//                     <Button as="a" inverted href="/onboard" style={{ marginLeft: '0.5em' }}>Sign Up</Button>
-//                   </Menu.Item>
-//                 </Menu>
-//               </Container>
-//               <HomepageHeading mobile={true} />
-//             </Segment>
+          <Sidebar.Pusher dimmed={sidebarOpened} onClick={this.handlePusherClick} style={{ minHeight: '100vh' }}>
+            <Segment inverted textAlign="center" style={{ minHeight: 350, padding: '1em 0em' }} vertical>
+              <Container>
+                <Menu inverted pointing secondary size="large" >
+                  <Menu.Item onClick={this.handleToggle}>
+                    <Icon name="sidebar" />
+                  </Menu.Item>
+                  <Menu.Item position="right">
+                    <Button as="a" inverted href="/onboard" >Log in</Button>
+                    <Button as="a" inverted href="/onboard" style={{ marginLeft: '0.5em' }}>Sign Up</Button>
+                  </Menu.Item>
+                </Menu>
+              </Container>
+              <HomepageHeading mobile={true} />
+            </Segment>
 
-//             {children}
-//           </Sidebar.Pusher>
-//         </Sidebar.Pushable>
-//         </> 
-//     );
-//   }
-// }
+            {children}
+          </Sidebar.Pusher>
+        </Sidebar.Pushable>        
+       </> 
+     );
+   }
+ }
 
 interface ResponsiveContainerProps {
   children?: React.ReactNode;
@@ -249,7 +254,7 @@ export default class Homepage extends React.Component<{}, {
   render() {
     return (
       <ResponsiveContainer>
-        <Segment style={{ padding: '3em 0em' }} vertical>
+        {/* <Segment style={{ padding: '3em 0em' }} vertical>
           <Grid container stackable verticalAlign="middle">
             <Grid.Row>
               <Grid.Column width={8}>
@@ -317,8 +322,8 @@ export default class Homepage extends React.Component<{}, {
               </Grid.Column>
             </Grid.Row>
           </Grid>
-        </Segment>
-        <Segment inverted vertical style={{ padding: '5em 0em' }}>
+        </Segment> */}
+        <Segment inverted vertical style={{ padding: '3em 0em', backgroundColor: 'rgb(39,96,82)' }}>
           <Container>
             <Grid divided inverted stackable>
               <Grid.Row>
@@ -335,19 +340,25 @@ export default class Homepage extends React.Component<{}, {
                   </List>
                 </Grid.Column>
                 <Grid.Column width={3}>
-                  <Header inverted as="h4" content="Services" />
+                  <Header inverted as="h4" content="Contact Us" />
                   <List link inverted>
-                    <List.Item as="a" href="https://github.com/MaxwellBo/Muncoordinated-2/discussions">Forum</List.Item>
-                    <List.Item as="a" href="https://github.com/MaxwellBo/Muncoordinated-2/issues">Support</List.Item>
-                    <List.Item as="a" href="https://www.helpmymun.com/">MUN Resources</List.Item>
+                    <List.Item as="a" href="mailto:unyc.contact@gmail.com">unyc.contact@gmail.com</List.Item>
+                    <List.Item as="a" href="https://www.instagram.com/un.yc/?hl=en">Instagram @un.yc</List.Item>
+                    <List.Item as="a" href="https://www.linkedin.com/company/united-nations-youth-of-canada-unyc/posts/?feedView=all">LinkedIn UNYC</List.Item>
                   </List>
                 </Grid.Column>
                 <Grid.Column width={7}>
                   <Header as="h4" inverted>Info</Header>
-                  <p>Made with <span role="img" aria-label="love">💖</span> by <a href="https://github.com/MaxwellBo">Max Bo</a>, 
-                  with assistance from the <a href="https://www.facebook.com/UQUNSA/">UQ United Nations Student Association</a>
+                  <p>
+                    Made by{' '}
+                    <a href="https://github.com/mahangel" className="madeByLink">
+                    Angelique Mah</a>
+                    , adapted from Muncoordinated by{' '}
+                    <a href="https://github.com/MaxwellBo" className="madeByLink">
+                      Max Bo
+                    </a>
                   </p>
-                  <p>Copyright © 2024</p>
+                  <p>Copyright © 2025</p>
                 </Grid.Column>
               </Grid.Row>
             </Grid>
