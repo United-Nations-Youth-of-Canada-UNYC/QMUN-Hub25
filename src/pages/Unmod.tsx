@@ -34,10 +34,10 @@ export default class Unmod extends React.Component<Props, State> {
     return (
       <Container text style={{ padding: '1em 0em' }}>
         <Helmet>
-          <title>{`Unmoderated Caucus - Muncoordinated`}</title>
+          <title>{`Suspension - QMUN`}</title>
         </Helmet>
         <Timer 
-          name="Unmoderated caucus" 
+          name="Suspension timer" 
           timerFref={committeeFref} 
           onChange={(x: TimerData) => x} 
           defaultDuration={10}
