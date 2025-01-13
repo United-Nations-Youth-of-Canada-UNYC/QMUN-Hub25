@@ -6,9 +6,8 @@ import {ResolutionID} from "./resolution";
 
 export type MotionID = string;
 
-
-enum MotionType {
-  OpenUnmoderatedCaucus = 'Informal Session',
+export enum MotionType {
+  OpenUnmoderatedCaucus = 'Open Unmoderated Caucus',
   OpenModeratedCaucus = 'Open Moderated Caucus',
   ExtendUnmoderatedCaucus = 'Extend Unmoderated Caucus',
   ExtendModeratedCaucus = 'Extend Moderated Caucus',
@@ -23,8 +22,7 @@ enum MotionType {
   CloseDebate = 'Close Debate',
   ReorderDraftResolutions = 'Reorder Draft Resolutions',
   ProposeStrawpoll = 'Propose Strawpoll',
-  AddToListRequest = 'Request to be added to the Speaker\'s list',
-  GeneralNoteToDAIS = 'Note to DAIS'
+  AddWorkingPaper = "Introduce Working Paper"
 }
 
 export enum MotionVote {
@@ -49,23 +47,22 @@ export interface MotionData {
 }
 
 export const MOTION_TYPE_OPTIONS = [
-  MotionType.AddToListRequest,
-  MotionType.GeneralNoteToDAIS
-  // MotionType.OpenUnmoderatedCaucus, // implemented
-  // MotionType.OpenModeratedCaucus, // implemented
-  // MotionType.ExtendUnmoderatedCaucus, // partially implemented
-  // MotionType.ExtendModeratedCaucus, // partially implemented
-  // MotionType.CloseModeratedCaucus, // implemented
-  // MotionType.IntroduceDraftResolution, // implemented
-  // MotionType.IntroduceAmendment, // implemented
-  // MotionType.VoteOnResolution,
-  // MotionType.ProposeStrawpoll,
-  // MotionType.SuspendDraftResolutionSpeakersList,
-  // MotionType.OpenDebate,
-  // MotionType.SuspendDebate,
-  // MotionType.ResumeDebate,
-  // MotionType.CloseDebate,
-  // MotionType.ReorderDraftResolutions,
+  MotionType.OpenUnmoderatedCaucus, // implemented
+  MotionType.OpenModeratedCaucus, // implemented
+  MotionType.ExtendUnmoderatedCaucus, // partially implemented
+  MotionType.ExtendModeratedCaucus, // partially implemented
+  MotionType.CloseModeratedCaucus, // implemented
+  MotionType.IntroduceDraftResolution, // implemented
+  MotionType.IntroduceAmendment, // implemented
+  MotionType.VoteOnResolution, // implemented
+  MotionType.ProposeStrawpoll, // implemented
+  MotionType.SuspendDraftResolutionSpeakersList,
+  MotionType.OpenDebate,
+  MotionType.SuspendDebate,
+  MotionType.ResumeDebate,
+  MotionType.CloseDebate,
+  MotionType.ReorderDraftResolutions,
+  MotionType.AddWorkingPaper,
 ].map(makeSentenceCaseDropdownOption);
 
 export const DEFAULT_MOTION: MotionData = {
