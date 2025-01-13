@@ -31,7 +31,7 @@ export const KEYBOARD_SHORTCUT_LIST = (
       <Button size="mini">
         C
       </Button>
-      Toggle caucus timer
+      Toggle suspension timer
     </List.Item>
   </List>
 );
@@ -83,10 +83,10 @@ export default class Help extends React.PureComponent<{}, {}> {
         <Segment attached="bottom">
           Muncoordinated is licensed under {gpl}
         </Segment>
-        <Header as="h3" attached="top">Social media</Header>
+        <Header as="h3" attached="top">UNYC</Header>
         <Segment attached="bottom">
-          Want to meet likeminded Muncoordinators? Come check out our 
-          forum <a href="https://github.com/MaxwellBo/Muncoordinated-2/discussions">The Muncoordinator's Discussion Space</a>.
+          Want to learn more about UNYC? Come check out our 
+          Website <a href="https://unyc">UNYC-United Nations Youth of Canada</a>.
         </Segment>
       </Container>
     );
