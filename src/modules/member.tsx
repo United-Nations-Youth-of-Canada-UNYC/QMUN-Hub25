@@ -40,7 +40,7 @@ export function nameToFlagCode(name: string): FlagNames {
   }
 
   // renamed 2019
-  if (name === 'North Macedonia') {
+  if (name === 'North mcdo') {
     return 'mk';
   }
 
