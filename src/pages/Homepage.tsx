@@ -37,7 +37,7 @@ const HomepageHeading = ({ mobile }: HomepageHeadingProps) => (
       style={{
         fontSize: mobile ? '2em' : '4em',
         fontWeight: 'bold',
-        color: 'black',
+        color: 'rgb(39,96,82)',
         marginBottom: 0,
         marginTop: mobile ? '1.5em' : '3em',
       }}
@@ -65,7 +65,7 @@ const HomepageHeading = ({ mobile }: HomepageHeadingProps) => (
       inverted
       style={{
         fontSize: mobile ? '0.5em' : '1.7em',
-        color: 'black',
+        color: 'rgb(39,96,82)',
         fontWeight: 'normal',
         marginTop: mobile ? '0.5em' : '0.5em',
         backgroundColor: '#f2f0ef',
@@ -127,6 +127,7 @@ class DesktopContainer extends React.Component<DesktopContainerProps, DesktopCon
                 <Menu.Item as="a" active>Home</Menu.Item>
                 <Menu.Item as="a" href="/committees/-MEZXMLXacUeaJyXM4zR">QMUN Hub</Menu.Item>
                 <Menu.Item as="a" href="/guides">Background Guides</Menu.Item>
+                <Menu.Item as="a" href="/guides">Delegate Handbook</Menu.Item>
 
                 <Menu.Item position="right">
                   <Button as="a" href="/onboard" inverted={!fixed} onClick={logClickLogInButton}>
@@ -187,6 +188,7 @@ interface MobileContainerState {
             <Menu.Item as="a" active>Home</Menu.Item>
             <Menu.Item as="a" href="/committees/-MEZXMLXacUeaJyXM4zR">QMUN Hub</Menu.Item>
             <Menu.Item as="a" href="/guides">Background Guides</Menu.Item>
+            <Menu.Item as="a" href="/guides">Delegate Handbook</Menu.Item>
             
             <Menu.Item as="a" href="/onboard">Log in</Menu.Item>
             <Menu.Item as="a" href="/onboard">Sign up</Menu.Item>
