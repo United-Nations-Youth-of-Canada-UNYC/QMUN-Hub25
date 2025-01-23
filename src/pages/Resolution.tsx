@@ -162,7 +162,7 @@ export default class Resolution extends React.Component<Props, State> {
       speaking: {
         duration: DEFAULT_CAUCUS.speakerTimer.remaining,
         who: proposer,
-        stance: Stance.For,
+        stance: Stance.Add,
       }
     };
 
@@ -192,7 +192,7 @@ export default class Resolution extends React.Component<Props, State> {
       speaking: {
         duration: DEFAULT_CAUCUS.speakerTimer.remaining,
         who: proposer || '', // defend against undefined proposers
-        stance: Stance.For,
+        stance: Stance.Add,
       }
     };
 
@@ -201,7 +201,7 @@ export default class Resolution extends React.Component<Props, State> {
     ref.child('queue').push().set({
       duration: DEFAULT_CAUCUS.speakerTimer.remaining,
       who: seconder,
-      stance: Stance.For,
+      stance: Stance.Add,
     });
 
     this.recoverResolutionFref().child('caucus').set(ref.key);

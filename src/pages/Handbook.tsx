@@ -9,7 +9,6 @@ import {
   Image,
   List,
   Menu,
-  Responsive,
   Segment,
   Statistic,
   Sidebar,
@@ -40,26 +39,21 @@ const REPO_LINK = 'https://github.com/MaxwellBo/Muncoordinated-2';
  />
  */
  const GuidesHeading = ({ mobile }: GuidesHeadingProps) => (
-  <Container text style={{backgroundColor: '#f2f0ef'}}>
+  <Container text>
     <Header
       as="h1"
-      content="Background Guides for QMUN 2025"
+      content="Delegate Handbook"
       inverted
       style={{
         fontSize: mobile ? '2em' : '4em',
-        fontWeight: 'bold',
-        color: 'rgb(39,96,82)',
+        fontWeight: 'normal',
         marginBottom: 0,
         marginTop: mobile ? '1.5em' : '3em',
       }}
     />
     <br />
-    <Button style={{backgroundColor: 'rgb(39,96,82)'}}
-      as="a" 
-      primary size="huge" 
-      href="/BGG 2025_merged.pdf" 
-      target="_blank" download>
-      Click to download your Background Guide
+    <Button as="a" primary size="huge" href="/QMUN 2025 Delegate Handbook.pdf" target="_blank" download>
+      Click to download your Delegate Handbook
     </Button>
     <br />
   </Container>
@@ -105,20 +99,19 @@ class DesktopContainer extends React.Component<DesktopContainerProps, DesktopCon
       // @ts-ignore
       <>
         <Visibility once={false} onBottomPassed={this.showFixedMenu} onBottomPassedReverse={this.hideFixedMenu}>
-          <Segment inverted textAlign="center" style={{ minHeight: 700, padding: '0em 0em',  backgroundColor: '#f2f0ef' }} vertical>
+          <Segment inverted textAlign="center" style={{ minHeight: 700, padding: '1em 0em' }} vertical>
             <Menu
               fixed={fixed ? 'top' : undefined}
               inverted={!fixed}
               pointing={!fixed}
               secondary={!fixed}
               size="large"
-              style={{backgroundColor: 'rgb(39,96,82)'}}
             >
               <Container>
                 <Menu.Item as="a" href="/">Home</Menu.Item>
                 <Menu.Item as="a" href="/committees/-MEZXMLXacUeaJyXM4zR">QMUN Hub</Menu.Item>
-                <Menu.Item as="a" href="/guides" active>Background Guides</Menu.Item>
-                <Menu.Item as="a" href="/handbook">Delegate Handbook</Menu.Item>
+                <Menu.Item as="a" href="/guides">Background Guides</Menu.Item>
+                <Menu.Item as="a" href="/handbook" active>Delegate Handbook</Menu.Item>
               </Container>
             </Menu>
             <GuidesHeading mobile={false} />
@@ -166,22 +159,22 @@ class MobileContainer extends React.Component<MobileContainerProps, MobileContai
 
     return (
       <>
-        <Sidebar.Pushable style={{backgroundColor: '#f2f0ef'}}>
-          <Sidebar as={Menu} animation="uncover" inverted vertical visible={sidebarOpened} style={{backgroundColor: 'rgb(39,96,82)'}}>
+        <Sidebar.Pushable>
+          <Sidebar as={Menu} animation="uncover" inverted vertical visible={sidebarOpened}>
             <Menu.Item as="a" >Home</Menu.Item>
             <Menu.Item as="a" href="/committees/-MEZXMLXacUeaJyXM4zR">Hub A</Menu.Item>
             <Menu.Item as="a" href="#">Hub B</Menu.Item>
-            <Menu.Item as="a" href="/guides" active>Background Guides</Menu.Item>
-            <Menu.Item as="a" href="/handbook">Delegate Handbook</Menu.Item>
+            <Menu.Item as="a" href="/guides">Background Guides</Menu.Item>
+            <Menu.Item as="a" href="/handbook" active>Delegate Handbook</Menu.Item>
 
           </Sidebar>
 
-          <Sidebar.Pusher dimmed={sidebarOpened} onClick={this.handlePusherClick} style={{ minHeight: '100vh'}}>
+          <Sidebar.Pusher dimmed={sidebarOpened} onClick={this.handlePusherClick} style={{ minHeight: '100vh' }}>
             <Segment inverted textAlign="center" style={{ minHeight: 350, padding: '1em 0em' }} vertical>
               <Container>
                 <Menu inverted pointing secondary size="large">
                   <Menu.Item onClick={this.handleToggle}>
-                    <Icon name="sidebar"/>
+                    <Icon name="sidebar" />
                   </Menu.Item>
                 </Menu>
               </Container>
@@ -203,7 +196,7 @@ interface ResponsiveContainerProps {
 const ResponsiveContainer = ({ children }: ResponsiveContainerProps) => (
   <React.Fragment>
     <DesktopContainer>{children}</DesktopContainer>
-    {/* <MobileContainer>{children}</MobileContainer> */}
+    <MobileContainer>{children}</MobileContainer>
   </React.Fragment>
 );
 
@@ -232,50 +225,51 @@ export default class Guides extends React.Component<{}, {
   }
 
   render() {
-      return (
-        <ResponsiveContainer>
-          <Segment inverted vertical style={{ padding: '3em 0em', backgroundColor: 'rgb(39,96,82)' }}>
-            <Container>
-              <Grid divided inverted stackable>
-                <Grid.Row>
-                  <Grid.Column width={3}>
-                    <Header inverted as="h4" content="About" />
-                    <List link inverted>
-                      <List.Item as="a" href={REPO_LINK}>Source</List.Item>
-                      <List.Item
-                        as="a"
-                        href="https://github.com/MaxwellBo/Muncoordinated-2/blob/master/LICENSE"
-                      >
-                        License
-                      </List.Item>
-                    </List>
-                  </Grid.Column>
-                  <Grid.Column width={3}>
-                    <Header inverted as="h4" content="Contact Us" />
-                    <List link inverted>
-                      <List.Item as="a" href="mailto:unyc.contact@gmail.com">unyc.contact@gmail.com</List.Item>
-                      <List.Item as="a" href="https://www.instagram.com/un.yc/?hl=en">Instagram @un.yc</List.Item>
-                      <List.Item as="a" href="https://www.linkedin.com/company/united-nations-youth-of-canada-unyc/posts/?feedView=all">LinkedIn UNYC</List.Item>
-                    </List>
-                  </Grid.Column>
-                  <Grid.Column width={7}>
-                    <Header as="h4" inverted>Info</Header>
-                    <p>
-                      Made by{' '}
-                      <a href="https://github.com/mahangel" className="madeByLink">
-                      Angelique Mah</a>
-                      , adapted from Muncoordinated by{' '}
-                      <a href="https://github.com/MaxwellBo" className="madeByLink">
-                        Max Bo
-                      </a>
-                    </p>
-                    <p>Copyright © 2025</p>
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-            </Container>
-          </Segment>
-        </ResponsiveContainer>
-      );
-    }
+    return (
+      <ResponsiveContainer>
+        <Segment inverted vertical style={{ padding: '3em 0em', backgroundColor: 'rgb(39,96,82)' }}>
+          <Container>
+            <Grid divided inverted stackable>
+              <Grid.Row>
+                <Grid.Column width={3}>
+                  <Header inverted as="h4" content="About" />
+                  <List link inverted>
+                    <List.Item as="a" href={REPO_LINK}>Source</List.Item>
+                    <List.Item
+                      as="a"
+                      href="https://github.com/MaxwellBo/Muncoordinated-2/blob/master/LICENSE"
+                    >
+                      License
+                    </List.Item>
+                  </List>
+                </Grid.Column>
+                <Grid.Column width={3}>
+                  <Header inverted as="h4" content="Contact Us" />
+                  <List link inverted>
+                    <List.Item as="a" href="mailto:unyc.contact@gmail.com">unyc.contact@gmail.com</List.Item>
+                    <List.Item as="a" href="https://www.instagram.com/un.yc/?hl=en">Instagram @un.yc</List.Item>
+                    <List.Item as="a" href="https://www.linkedin.com/company/united-nations-youth-of-canada-unyc/posts/?feedView=all">LinkedIn UNYC</List.Item>
+                  </List>
+                </Grid.Column>
+                <Grid.Column width={7}>
+                  <Header as="h4" inverted>Info</Header>
+                  <p>
+                    Made by{' '}
+                    <a href="https://github.com/mahangel" className="madeByLink">
+                    Angelique Mah</a>
+                    , adapted from Muncoordinated by{' '}
+                    <a href="https://github.com/MaxwellBo" className="madeByLink">
+                      Max Bo
+                    </a>
+                  </p>
+                  <p>Copyright © 2025</p>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </Container>
+        </Segment>
+      </ResponsiveContainer>
+    );
   }
+}
+

@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "muncoordinated"
-  }
+    "default": "unyc-qmun-hub",
+    "QMUN": "unyc-qmun-hub"
+  },
+  "targets": {},
+  "etags": {}
 }

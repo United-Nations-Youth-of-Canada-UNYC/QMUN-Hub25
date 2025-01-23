@@ -8,6 +8,7 @@ import {
   Image,
   List,
   Menu,
+  Responsive,
   Segment,
   Statistic,
   Sidebar,
@@ -127,7 +128,7 @@ class DesktopContainer extends React.Component<DesktopContainerProps, DesktopCon
                 <Menu.Item as="a" active>Home</Menu.Item>
                 <Menu.Item as="a" href="/committees/-MEZXMLXacUeaJyXM4zR">QMUN Hub</Menu.Item>
                 <Menu.Item as="a" href="/guides">Background Guides</Menu.Item>
-                <Menu.Item as="a" href="/guides">Delegate Handbook</Menu.Item>
+                <Menu.Item as="a" href="/handbook">Delegate Handbook</Menu.Item>
 
                 <Menu.Item position="right">
                   <Button as="a" href="/onboard" inverted={!fixed} onClick={logClickLogInButton}>
@@ -188,7 +189,7 @@ interface MobileContainerState {
             <Menu.Item as="a" active>Home</Menu.Item>
             <Menu.Item as="a" href="/committees/-MEZXMLXacUeaJyXM4zR">QMUN Hub</Menu.Item>
             <Menu.Item as="a" href="/guides">Background Guides</Menu.Item>
-            <Menu.Item as="a" href="/guides">Delegate Handbook</Menu.Item>
+            <Menu.Item as="a" href="/handbook">Delegate Handbook</Menu.Item>
             
             <Menu.Item as="a" href="/onboard">Log in</Menu.Item>
             <Menu.Item as="a" href="/onboard">Sign up</Menu.Item>

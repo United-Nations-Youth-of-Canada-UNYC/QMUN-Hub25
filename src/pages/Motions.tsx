@@ -194,7 +194,7 @@ export class MotionsComponent extends React.Component<Props & Hooks, State> {
         },
         speaking: {
           who: proposer,
-          stance: Stance.For,
+          stance: Stance.Add,
           duration: speakerSeconds
         },
         speakerDuration: speakerDuration,
@@ -261,7 +261,7 @@ export class MotionsComponent extends React.Component<Props & Hooks, State> {
 
       putSpeaking(committeeID, caucusID, {
         who: proposer,
-        stance: Stance.For,
+        stance: Stance.Add,
         duration: speakerSeconds
       });
 

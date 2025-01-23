@@ -89,11 +89,13 @@ export enum Template {
   // WHOHealthBoard = 'WHO Health Board',
 }
 
+
 export interface CommitteeData {
   name: string;
   chair: string;
   topic: string;
   conference?: string; // TODO: Migrate
+  template?: Template;
   creatorUid: firebase.UserInfo['uid'];
   members?: Record<MemberID, MemberData>;
   caucuses?: Record<CaucusID, CaucusData>;

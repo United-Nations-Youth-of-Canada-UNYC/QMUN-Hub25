@@ -12,9 +12,9 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="shortcut icon" href="/favicon.ico">
 
-    <title>QMUN 2025</title>
-    <meta property="og:title" content="QMUN 2025">
-    <meta name="twitter:title" content="QMUN 2025">
+    <title>QMUN</title>
+    <meta property="og:title" content="QMUN">
+    <meta name="twitter:title" content="QMUN">
 
     <meta property="og:url" content="https://muncoordinated.io/" />
 
@@ -45,5 +45,30 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <script type="module" src="/src/index.tsx"></script>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDxZypXV9cB135kLPb9W8Sdjrdx1ikl_hY",
+        authDomain: "qmun2021.firebaseapp.com",
+        databaseURL: "https://qmun2021.firebaseio.com",
+        projectId: "qmun2021",
+        storageBucket: "qmun2021.appspot.com",
+        messagingSenderId: "776859144464",
+        appId: "1:776859144464:web:665744ca89b1e070edd595",
+        measurementId: "G-E56VTCH3HN"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
   </body>
 </html>

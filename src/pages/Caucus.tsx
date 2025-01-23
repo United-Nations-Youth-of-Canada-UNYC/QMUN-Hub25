@@ -136,7 +136,8 @@ export function NextSpeaking(props: {
       speaking: props.fref.child('speaking'),
       timerData: props.speakerTimer,
       timer: props.fref.child('speakerTimer'),
-      timerResetSeconds: speakerSeconds
+      timerResetSeconds: speakerSeconds,
+      yielding: false
     };
 
     runLifecycle({...lifecycle, ...queueHeadDetails});
@@ -286,6 +287,8 @@ class SpeakerFeedEntry extends React.PureComponent<{
       timerData: speakerTimer,
       timer: caucusRef.child('speakerTimer'),
       timerResetSeconds: 0 // this shouldn't ever be used when yielding
+      ,
+      yielding: false
     };
 
     runLifecycle({...lifecycle, ...queueHeadDetails});
