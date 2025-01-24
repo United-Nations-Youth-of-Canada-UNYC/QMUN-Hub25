@@ -9,6 +9,7 @@ import {
   Image,
   List,
   Menu,
+  Responsive,
   Segment,
   Statistic,
   Sidebar,
@@ -18,7 +19,7 @@ import {
 import Loading from '../components/Loading';
 
 
-interface GuidesHeadingProps {
+interface HandbookHeadingProps {
   mobile: boolean;
 }
 
@@ -38,7 +39,7 @@ const REPO_LINK = 'https://github.com/MaxwellBo/Muncoordinated-2';
    }}
  />
  */
- const GuidesHeading = ({ mobile }: GuidesHeadingProps) => (
+ const HandbookHeading = ({ mobile }: HandbookHeadingProps) => (
   <Container text>
     <Header
       as="h1"
@@ -114,7 +115,7 @@ class DesktopContainer extends React.Component<DesktopContainerProps, DesktopCon
                 <Menu.Item as="a" href="/handbook" active>Delegate Handbook</Menu.Item>
               </Container>
             </Menu>
-            <GuidesHeading mobile={false} />
+            <HandbookHeading mobile={false} />
           </Segment>
         </Visibility>
 
@@ -178,7 +179,7 @@ class MobileContainer extends React.Component<MobileContainerProps, MobileContai
                   </Menu.Item>
                 </Menu>
               </Container>
-              <GuidesHeading mobile={true} />
+              <HandbookHeading mobile={true} />
             </Segment>
 
             {children}
@@ -200,7 +201,7 @@ const ResponsiveContainer = ({ children }: ResponsiveContainerProps) => (
   </React.Fragment>
 );
 
-export default class Guides extends React.Component<{}, {
+export default class Handbook extends React.Component<{}, {
   committeeNo?: number,
   delegateNo?: number
 }> {

@@ -43,7 +43,7 @@ const REPO_LINK = 'https://github.com/MaxwellBo/Muncoordinated-2';
   <Container text style={{backgroundColor: '#f2f0ef'}}>
     <Header
       as="h1"
-      content="Background Guides for QMUN 2025"
+      content="Background Guides QMUN 2025"
       inverted
       style={{
         fontSize: mobile ? '2em' : '4em',

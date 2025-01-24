@@ -16,6 +16,7 @@ import './App.css';
 import Onboard from './pages/Onboard';
 import Homepage from './pages/Homepage';
 import Guides from './pages/Guides';
+import Handbook from './pages/Handbook';
 import Committee from './pages/Committee';
 import { NotFound } from './components/NotFound';
 
@@ -39,6 +40,7 @@ class App extends React.Component {
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route exact path="/Guides" component={Guides} />
+        <Route exact path="/Handbook" component={Handbook}/>
         <Route exact path="/onboard" component={Onboard} />
         <Route exact path="/committees" component={Onboard} />
         <Route path="/committees/:committeeID" component={Committee} />
