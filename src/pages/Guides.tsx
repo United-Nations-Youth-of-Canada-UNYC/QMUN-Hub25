@@ -9,7 +9,6 @@ import {
   Image,
   List,
   Menu,
-  Responsive,
   Segment,
   Statistic,
   Sidebar,
