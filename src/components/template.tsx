@@ -45,7 +45,7 @@ export function TemplateAdder(props: { committeeID: CommitteeID }) {
   }
 
 
-  return (
+  {/*return (
     <Accordion>
       <Accordion.Title
         active={activeIndex === 0}
@@ -57,7 +57,7 @@ export function TemplateAdder(props: { committeeID: CommitteeID }) {
       </Accordion.Title>
       <Accordion.Content active={activeIndex === 0}>
         <Form>
-          <Form.Dropdown
+           <Form.Dropdown
             label="Template"
             name="template"
             search
@@ -68,7 +68,7 @@ export function TemplateAdder(props: { committeeID: CommitteeID }) {
             value={template}
             options={Object.values(Template).map(makeDropdownOption)}
             onChange={(event, data) => setTemplate(data.value as Template)}
-          />
+          /> 
           <Popup
             basic
             hoverable
@@ -88,7 +88,7 @@ export function TemplateAdder(props: { committeeID: CommitteeID }) {
           </Popup>
         </Form>
       </Accordion.Content>
-    </Accordion>
-  )
+    </Accordion> 
+  )*/}
 }
 

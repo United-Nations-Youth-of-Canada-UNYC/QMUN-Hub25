@@ -7,16 +7,16 @@ import {ResolutionID} from "./resolution";
 export type MotionID = string;
 
 export enum MotionType {
-  OpenUnmoderatedCaucus = 'Open Unmoderated Caucus',
+  OpenUnmoderatedCaucus = 'Open Unmoderated Caucus', // will become : Request to be added to the Speaker's list
   OpenModeratedCaucus = 'Open Moderated Caucus',
   ExtendUnmoderatedCaucus = 'Extend Unmoderated Caucus',
   ExtendModeratedCaucus = 'Extend Moderated Caucus',
   CloseModeratedCaucus = 'Close Moderated Caucus',
-  IntroduceDraftResolution = 'Introduce Draft Resolution',
+  IntroduceDraftResolution = 'Introduce Draft Resolution', // will become : Note to DAIS
   IntroduceAmendment = 'Introduce Amendment',
   SuspendDraftResolutionSpeakersList = 'Suspend Draft Resolution Speakers List',
   VoteOnResolution = 'Vote On Resolution',
-  OpenDebate = 'Open Debate',
+  OpenDebate = 'Open Debate', // will become : Request to be added to the Speaker's list
   SuspendDebate = 'Suspend Debate',
   ResumeDebate = 'Resume Debate',
   CloseDebate = 'Close Debate',

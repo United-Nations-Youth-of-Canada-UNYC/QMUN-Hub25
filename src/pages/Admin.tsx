@@ -285,7 +285,7 @@ export default class Admin extends React.Component<Props, State> {
         <Grid columns="2" stackable>
           <Grid.Row>
             <Grid.Column width={9}>
-              <TemplateAdder committeeID={this.props.match.params.committeeID} />
+              {/*<TemplateAdder committeeID={this.props.match.params.committeeID} />*/}
               {this.renderCommitteeMembers({ data: committee, fref })}
             </Grid.Column>
             <Grid.Column width={7}>

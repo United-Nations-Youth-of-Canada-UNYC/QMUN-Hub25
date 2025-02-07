@@ -39,20 +39,25 @@ const REPO_LINK = 'https://github.com/MaxwellBo/Muncoordinated-2';
  />
  */
  const HandbookHeading = ({ mobile }: HandbookHeadingProps) => (
-  <Container text>
+  <Container text style={{backgroundColor: '#f2f0ef'}}>
     <Header
       as="h1"
       content="Delegate Handbook"
       inverted
       style={{
         fontSize: mobile ? '2em' : '4em',
-        fontWeight: 'normal',
+        fontWeight: 'bold',
+        color: 'rgb(39,96,82)',
         marginBottom: 0,
         marginTop: mobile ? '1.5em' : '3em',
       }}
     />
     <br />
-    <Button as="a" primary size="huge" href="/QMUN 2025 Delegate Handbook.pdf" target="_blank" download>
+    <Button style={{backgroundColor: 'rgb(39,96,82)'}}
+      as="a" 
+      primary size="huge" 
+      href="/QMUN 2025 Delegate Handbook.pdf" 
+      target="_blank" download>
       Click to download your Delegate Handbook
     </Button>
     <br />
@@ -99,13 +104,14 @@ class DesktopContainer extends React.Component<DesktopContainerProps, DesktopCon
       // @ts-ignore
       <>
         <Visibility once={false} onBottomPassed={this.showFixedMenu} onBottomPassedReverse={this.hideFixedMenu}>
-          <Segment inverted textAlign="center" style={{ minHeight: 700, padding: '1em 0em' }} vertical>
+          <Segment inverted textAlign="center" style={{ minHeight: 700, padding: '0em 0em',  backgroundColor: '#f2f0ef' }} vertical>
             <Menu
               fixed={fixed ? 'top' : undefined}
               inverted={!fixed}
               pointing={!fixed}
               secondary={!fixed}
               size="large"
+              style={{backgroundColor: 'rgb(39,96,82)'}}
             >
               <Container>
                 <Menu.Item as="a" href="/">Home</Menu.Item>
@@ -159,8 +165,8 @@ class MobileContainer extends React.Component<MobileContainerProps, MobileContai
 
     return (
       <>
-        <Sidebar.Pushable>
-          <Sidebar as={Menu} animation="uncover" inverted vertical visible={sidebarOpened}>
+        <Sidebar.Pushable style={{backgroundColor: '#f2f0ef'}}>
+        <Sidebar as={Menu} animation="uncover" inverted vertical visible={sidebarOpened} style={{backgroundColor: 'rgb(39,96,82)'}}>
             <Menu.Item as="a" >Home</Menu.Item>
             <Menu.Item as="a" href="/committees/-MEZXMLXacUeaJyXM4zR">Hub A</Menu.Item>
             <Menu.Item as="a" href="#">Hub B</Menu.Item>
@@ -169,7 +175,7 @@ class MobileContainer extends React.Component<MobileContainerProps, MobileContai
 
           </Sidebar>
 
-          <Sidebar.Pusher dimmed={sidebarOpened} onClick={this.handlePusherClick} style={{ minHeight: '100vh' }}>
+          <Sidebar.Pusher dimmed={sidebarOpened} onClick={this.handlePusherClick} style={{ minHeight: '100vh'}}>
             <Segment inverted textAlign="center" style={{ minHeight: 350, padding: '1em 0em' }} vertical>
               <Container>
                 <Menu inverted pointing secondary size="large">
@@ -196,7 +202,7 @@ interface ResponsiveContainerProps {
 const ResponsiveContainer = ({ children }: ResponsiveContainerProps) => (
   <React.Fragment>
     <DesktopContainer>{children}</DesktopContainer>
-    <MobileContainer>{children}</MobileContainer>
+    {/*<MobileContainer>{children}</MobileContainer>*/}
   </React.Fragment>
 );
 
@@ -228,7 +234,7 @@ export default class Handbook extends React.Component<{}, {
     return (
       <ResponsiveContainer>
         <Segment inverted vertical style={{ padding: '3em 0em', backgroundColor: 'rgb(39,96,82)' }}>
-          <Container>
+        <Container>
             <Grid divided inverted stackable>
               <Grid.Row>
                 <Grid.Column width={3}>
