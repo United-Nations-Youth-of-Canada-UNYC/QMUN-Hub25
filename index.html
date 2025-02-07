@@ -16,7 +16,7 @@
     <meta property="og:title" content="QMUN">
     <meta name="twitter:title" content="QMUN">
 
-    <meta property="og:url" content="https://qmun2021.web.app/" />
+    <meta property="og:url" content="https://unyc-qmun-hub.web.app/" />
 
     <meta property="og:image" content="https://emojipedia-us.s3.amazonaws.com/thumbs/120/facebook/138/flag-for-united-nations_1f1fa-1f1f3.png" />
 
@@ -46,23 +46,24 @@
 
     <script type="module">
       // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-analytics.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-    
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: "AIzaSyDxZypXV9cB135kLPb9W8Sdjrdx1ikl_hY",
-        authDomain: "qmun2021.firebaseapp.com",
-        databaseURL: "https://qmun2021.firebaseio.com",
-        projectId: "qmun2021",
-        storageBucket: "qmun2021.appspot.com",
-        messagingSenderId: "776859144464",
-        appId: "1:776859144464:web:665744ca89b1e070edd595",
-        measurementId: "G-E56VTCH3HN"
-      };
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDxZypXV9cB135kLPb9W8Sdjrdx1ikl_hY",
+  authDomain: "qmun2021.firebaseapp.com",
+  databaseURL: "https://qmun2021.firebaseio.com",
+  projectId: "qmun2021",
+  storageBucket: "qmun2021.appspot.com",
+  messagingSenderId: "776859144464",
+  appId: "1:776859144464:web:665744ca89b1e070edd595",
+  measurementId: "G-E56VTCH3HN"
+};
+
     
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);

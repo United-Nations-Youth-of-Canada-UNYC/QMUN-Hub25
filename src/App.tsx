@@ -20,16 +20,28 @@ import Handbook from './pages/Handbook';
 import Committee from './pages/Committee';
 import { NotFound } from './components/NotFound';
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: 'AIzaSyA9EuEf7m3YOTBhBNhoe7DcOIZJP2toL6w',
-  authDomain: 'muncoordinated.firebaseapp.com',
-  databaseURL: 'https://muncoordinated.firebaseio.com',
-  projectId: 'muncoordinated',
-  storageBucket: 'muncoordinated.appspot.com',
-  messagingSenderId: '308589918735',
-  appId: "1:308589918735:web:f3567ce28d637eba40017a",
-  measurementId: "G-DPWPPBRD4M"
+  apiKey: "AIzaSyDxZypXV9cB135kLPb9W8Sdjrdx1ikl_hY",
+  authDomain: "qmun2021.firebaseapp.com",
+  databaseURL: "https://qmun2021.firebaseio.com",
+  projectId: "qmun2021",
+  storageBucket: "qmun2021.appspot.com",
+  messagingSenderId: "776859144464",
+  appId: "1:776859144464:web:665744ca89b1e070edd595",
+  measurementId: "G-E56VTCH3HN"
 };
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();

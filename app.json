@@ -1,5 +1,5 @@
 {
-  "name": "Muncoordinated",
+  "name": "unycqmunhub2",
   "scripts": {
   },
   "env": {
@@ -11,5 +11,10 @@
   },
   "addons": [
 
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/mars/create-react-app-buildpack"
+    }
   ]
 }
